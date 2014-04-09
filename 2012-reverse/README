@@ -1,0 +1,58 @@
+The Amazing Program Reverser
+============================
+
+Well, Maybe It's Not That Amazing
+---------------------------------
+
+### I like it anyway
+
+### Even though it did not win the 2012 IOCCC Contest
+
+This program, when given itself as input, 
+returns the **same** program back!
+
+This does not sound that exciting, but
+if you run it on the source of any
+other of the submissions I bet it is
+less likely the generated file
+will still compile.
+
+You can also use this submission
+as a general line-by-line file reverser,
+for all your file-reversing needs.
+
+
+### Obfuscation
+
+There isn't much real obfuscation, except
+for all numeric constants being turned
+into expressions, and turning as much
+of the syntax as possible into almost-emoticon
+ASCII art.
+
+### Challenge
+
+My challenge was to write a program that
+was vertically a mirror-image  but still compiled
+with no warnings on current gcc as well as
+having no memory leaks as reported by Valgrind.
+
+Also, I consider having statements and expressions
+inside of comments to be cheating (although I 
+couldn't figure out a way to handle } and {
+without abusing comments).
+
+Handling variable declarations was a challenge.
+I solved the problem by not declaring any.
+
+### Testing
+
+This code should be fairly portable.  I tested
+on various gcc-4 versions on x86, x86_64, and
+ppc64 Linux, as well as the xlc compiler on 
+AIX/ppc64.
+
+I'm not sure if this will work on an 8-bit system.
+Probably, if it has malloc and a c-library.
+Time to get cc65 going on my Apple IIe I suppose.
+

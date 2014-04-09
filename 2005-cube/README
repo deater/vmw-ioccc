@@ -1,0 +1,72 @@
+"cube.c", winner of "Most Beauteous Visuals" in the 2005 IOCCC
+            by Vince Weaver (vince _at_ deater.net)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The code should be self-documenting.
+
+For spoilers see the "REMARKS" file.
+
+Requirements:
+~~~~~~~~~~~~~
+  Some sort of OpenGL implementation.  It works (slowly) with Mesa.
+  
+  Tested under Linux ( amd64, x86, big-endian PPC),
+     MacOSX (10.4.x) and on SGI Irix 6.5 (r10k). 
+
+  The source code needs to be in the same directory as the compiled 
+     binary in order to run.
+
+To compile:
+~~~~~~~~~~~
+
+ gcc -O2 -o cube -I/usr/X11R6/include -L/usr/X11R6/lib -lGL -lGLU -lX11 cube.c
+  
+  On AMD64 machines (and possibly other 64-bit Linuxes) you might
+    have to do:
+    
+ gcc -O2 -o cube -L/usr/X11R6/lib64 -lGL -lGLU -lX11 cube.c
+
+
+To run:
+~~~~~~~
+
+  Just type "./cube"
+   
+  On OSX you will have to start the X11 X-server first or else
+    you'll get errors.
+
+To use:
+~~~~~~~
+  "spacebar" to change the scene a bit
+  ESCAPE should quit.  If that fails, try backslash.
+
+To print:
+~~~~~~~~~
+  enscript -fCourier7 -E -o cube.ps cube.c
+
+
+To partly un-obfuscate:
+~~~~~~~~~~~~~~~~~~~~~~~
+  sed -e '/^#.*include/d' cube.c | cpp | indent
+  
+
+Errors you can get:
+~~~~~~~~~~~~~~~~~~~
+  0 = no error
+  1 = X problem
+  2 = Can't open glx
+  3 = Can't open 16bpp visual
+  4 = can't open source file
+
+Changes:
+~~~~~~~~
+
+   After submission, I made some minor changes to remove recursive CPP macros
+     (which I had accidentally included) and also made a fix to allow the
+     program to compile and run under Irix 6.5.22 (CWBorderPixel added
+     to XCreateWindow() ).
+     
+   The code formatting was then re-arranged to preserve the original layout.
+     
+   The original submission is included here as "cube.c.orig".
+

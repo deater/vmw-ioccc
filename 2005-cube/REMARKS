@@ -1,0 +1,52 @@
+ABUSE OF RULES:
+~~~~~~~~~~~~~~~
+  + The executable needs to read in its own source code in order to run.
+    As long as the source is in the same directory as the executable
+    it should be able to find it...
+  + The program requires the OpenGL library.
+  + The program abuses severely the whitespace and { } ; exceptions
+    in the filesize limits.
+
+Requirements:
+~~~~~~~~~~~~~
+  + OpenGL (Mesa will work, although slowly)
+  + 16bpp graphics capability
+  + The original source needs to be in the same directory as the
+    executable, and the source's name should be the same as the
+    executable but with .c on the end.
+
+Background:
+~~~~~~~~~~~
+  I was annoyed after the last IOCC because I slaved away on a clever text 
+  based game only to find all of the game winners used X11!
+  
+  X11 isn't standard C!
+
+  So to one up them, I decided to use OpenGL.  
+  
+  OpenGL is standard, and most modern Unix-like systems have either 
+  accelerated graphics or software rendering.
+
+Obfuscation:
+~~~~~~~~~~~~
+  It was a challenge getting the source code below the 2k limit.
+  OpenGL has way too many GRATUITOUSLY_LONG_CONSTANTS and
+  glLongStudlyFunctionNames();
+
+  Therefore, much of the obfuscation comes secondary to just reducing the code
+  size to fit under the limit  while still having some semblance of a demo.  
+  
+  There are some interesting abuses scattered about.
+
+Usage:
+~~~~~~
+  Try hitting the spacebar when the program is running.
+
+For Fun:
+~~~~~~~~
+  Try modifying the texture to your own custom design...
+
+Thanks:
+~~~~~~~
+  Many thanks to John Clemens for testing this on various machines for me.
+

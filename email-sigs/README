@@ -1,0 +1,5 @@
+Various e-mail signatures that are obfuscated.
+
+Some of them rely on undefined C behavior and thus no longer
+work with modern compilers.
+

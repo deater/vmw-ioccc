@@ -1,0 +1,11 @@
+?? January 2004
++ Initial version
++ Submitted to IOCCC
+
+27 February 2004
++ Hacked color support on top of already obfuscated code.
++ Submitted updated version to IOCCC
+
+9 July 2004
++ Increased udelay a bit to try to fix speedup on newer linux-2.6 based
+  systems.

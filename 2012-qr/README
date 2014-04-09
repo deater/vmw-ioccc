@@ -1,0 +1,81 @@
+This code did *not* win the 2012 IOCCC
+
+Hint
+----
+
+If you squint a bit, the code is self-documenting.
+
+For a spoiler, see the end.
+
+Obfuscations
+------------
+
+I like to make the variables look like ASCII art.
+
+Never have an integer constant when you can
+play with bit operators.
+
+Also, the loop structure is complicated enough
+that when I tried to go back and make it worse
+(after only about 15 minutes) I couldn't understand
+what the code was doing at all, except that it
+worked.  That has to count for something.
+
+Features
+--------
+
+All code, generated and otherwise, compiles cleanly
+with no warnings on gcc-4.7 -Wall
+
+Running
+-------
+
+You'll need to run it on an ansi-color terminal.
+Preferably one in at least 80x40 mode.
+
+If you don't have a smartphone handy you can
+do the following set of optional steps to get 
+the full effect:
+
+    ./prog > out.ans
+    ansi2gif --ysize auto --png out.ans out.png
+    zbarimg -q --raw out.png > out.c
+    cc -o out out.c
+    ./out
+  
+Where ansi2gif comes from this site:
+[http://www.deater.net/weave/vmwprod/ansi2gif/](http://www.deater.net/weave/vmwprod/ansi2gif/)
+and zbarimg can be obtained via something like: "apt-get install zbar-tools"
+   
+Sadness
+-------
+
+I really wanted the final output to be larger, possibly
+even a quine, but it's tricky getting a reasonable
+payload in such a small set of bits.
+
+Favorite Line of Code
+---------------------
+_Like Woooooo!_
+    "l1Ik?Woooooooooooooooooooooooo"
+This cheer is being shouted by an ASCII art cheerleader.
+This was not intentional, just the way the code worked out.
+
+Testing
+-------
+
+This code should be fairly portable.  I tested
+on various gcc-4 versions on x86, x86_64, and
+ppc64 Linux, as well as the xlc compiler on 
+AIX/ppc64.
+
+I'm not sure if this will work on an 8-bit system.
+Time to get cc65 going on my Apple IIe I suppose.
+
+
+Spoiler
+-------
+
+It prints a qr code, specifically a QR code for another
+C program which is valid warning-free C code.
+
