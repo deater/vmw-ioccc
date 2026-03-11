@@ -2,7 +2,15 @@ CC = gcc
 CFLAGS = -Wall -O2
 LFLAGS = -lm
 
-all:	plasma_simple sierzoom_simple checkers_simple music random_music
+all:	plasma_simple sierzoom_simple checkers_simple music random_music prog
+
+###
+
+prog:	prog.o
+	$(CC) -o prog prog.o $(LFLAGS)
+
+prog.o:	prog.c
+	$(CC) $(CFLAGS) -c prog.c
 
 ###
 
@@ -48,4 +56,5 @@ sierzoom_simple.o:	sierzoom_simple.c
 ###
 
 clean:	
-	rm -f plasma_simple sierzomo_simple checkers_simple music *~ *.o
+	rm -f plasma_simple sierzomo_simple checkers_simple music \
+		random_music prog *~ *.o
